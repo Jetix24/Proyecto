@@ -7,6 +7,10 @@ public class Proyecto_Av {
         
         Alumnos Est = new Alumnos(Cal,num);
         Est.Estudiante();
+        
+     
+        
+        
     }
     
 }

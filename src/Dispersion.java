@@ -1,6 +1,7 @@
 
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
+import javax.swing.JOptionPane;
 
 public class Dispersion extends Estadistica {
 
@@ -9,20 +10,22 @@ public class Dispersion extends Estadistica {
     }
     public void Mostrar_Disper(){
         Rango();
-        System.out.println("La desviación estandar es = " + Desviacion());
+        JOptionPane.showMessageDialog(null,"La desviación estandar es = " + Desviacion());
         Varianza();
     }
-    public void Rango() {
+    public double Rango() {
        double r;
        Ordenar();
        r = Cal[num-1] - Cal[0];
-       System.out.println("El rango es = " + r);
+       //JOptionPane.showMessageDialog(null,"El rango es = " + r);
+       return r;
     }
-    public void Varianza() {
+    public double Varianza() {
        double varianza = (float) pow(Desviacion(),2);
-       System.out.println("La varianza es = " + varianza);
+       //JOptionPane.showMessageDialog(null,"La varianza es = " + varianza);
+       return varianza;
     }
-    public double Desviacion() {
+   double Desviacion() {
       double desviacion = 0;
       
       for(int i = 0 ; i < num; i++){

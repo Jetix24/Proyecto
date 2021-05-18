@@ -1,5 +1,10 @@
+
+import javax.swing.JOptionPane;
+
 public class TendenciaCentral extends Estadistica {
 
+    double moda;
+    
     public TendenciaCentral(double[]Cal, int num){
         super (Cal, num);
     }
@@ -7,11 +12,12 @@ public class TendenciaCentral extends Estadistica {
         GetMedia();
         Moda();
         Mediana();
+        JOptionPane.showMessageDialog(null, "La media es = " + Media()); 
     }
     public void GetMedia() {
-      System.out.println("La media es = " + Media());
+      JOptionPane.showMessageDialog(null, "La media es = " + Media()); 
     }
-    public void Moda() {
+    public String Moda() {
         Ordenar();
         int Max_Rep = 0;
         double moda = 0;
@@ -30,19 +36,22 @@ public class TendenciaCentral extends Estadistica {
                 moda2 = Cal[i];
              }
           }
-        if(moda2 != 0){ System.out.println("Las modas son = "+moda+" y "+moda2+ " y se repitieron " + Max_Rep+ " veces");    
+        if(moda2 != 0){ return "Las modas son = "+moda+" y "+moda2+ " y se repitieron " + Max_Rep+ " veces";   
         } else{
-           System.out.println("La moda es = "+moda+" y se repitió "+Max_Rep+" veces"); 
+            return "La moda es = "+moda+" y se repitió "+Max_Rep+" veces"; 
         }
+        
+        
         }
-    public void Mediana() {
+    public double Mediana() {
         double pos;
         Ordenar();
               if( num% 2 == 0){
                   pos = (Cal[(num-2)/2] + Cal[num/2])/2;
+                  return pos;
               }else{
                   pos = Cal[(num)/2];
+                  return pos;
               }
-        System.out.println("La mediana es = " + pos);
     }       
 }

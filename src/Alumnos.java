@@ -1,4 +1,5 @@
-import java.util.Scanner;
+
+import javax.swing.JOptionPane;
 
 public class Alumnos {
       private String[] Nom;
@@ -11,11 +12,7 @@ public class Alumnos {
           this.num =num;
       }
     public void Estudiante() {
-        Scanner sc = new Scanner(System.in);
-         
-        System.out.println("Ingresa la cantidad de alumnos que se evaluaran");
-            num = sc.nextInt();
-            sc.nextLine();
+            num = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingresa la cantidad de alumnos que se evaluaran"));
               Nom = new String[num];
               Cal = new double[num];
               Mat = new long[num];
@@ -24,37 +21,24 @@ public class Alumnos {
         Dispersion Dis = new Dispersion(Cal, num);
         ReporteDatos Rd = new ReporteDatos(Cal, num);
         
-        for(int i=0; i < num; ++i){
-          System.out.println(YELLOW+ "----------------------------------------------------------------------------------------");  
-            System.out.println("Ingresa el nombre del alumno");
-              Nom[i] =  sc.nextLine();
-            System.out.println("Ingresa la matricula de " + Nom[i]);  
-              Mat[i] =  sc.nextLong();
-              sc.nextLine();
-            System.out.println("Ingresa la calificación de " + Nom[i]);
-              Cal[i] =  sc.nextDouble();
-              sc.nextLine();
+        for(int i=0; i < num; ++i){ 
+              Nom[i] =  JOptionPane.showInputDialog(null,"Ingresa el nombre del alumno");           
+              Mat[i] =  Integer.parseInt(JOptionPane.showInputDialog(null, "Ingresa la matricula de " + Nom[i]));
+              Cal[i] =  Double.parseDouble(JOptionPane.showInputDialog(null, "Ingresa la calificación de " + Nom[i]));
+        
         } 
-          System.out.println(YELLOW+ "----------------------------------------------------------------------------------------");
-          System.out.println(GREEN + "Alumnos");
+       
+         
           for(int i=0; i<=num-1; i++){
-             System.out.print("Nombre: " + Nom[i] + "    Matricula: " + Mat[i] + "    Calificacion: " + Cal[i]);
-             System.out.println("");
+             JOptionPane.showMessageDialog(null, "Alumno:\n Nombre: " + Nom[i] + "    Matricula: " + Mat[i] + "    Calificacion: " + Cal[i]); 
         } 
-          System.out.println(YELLOW+ "----------------------------------------------------------------------------------------");
-            System.out.println(CIAN+ "Reporte de Datos"); 
-            Rd.Mostrar_Reporte();
-          System.out.println(YELLOW+ "----------------------------------------------------------------------------------------");
-            System.out.println(BLUE+ "Medidas de Tendencia Central");   
-            Ten.Mostrar_centrales();
-          System.out.println(YELLOW+ "----------------------------------------------------------------------------------------");  
-            System.out.println(RED+ "Medidas de Dispersion"); 
-            Dis.Mostrar_Disper();
-          System.out.println(YELLOW+ "----------------------------------------------------------------------------------------");   
+              Rd.Mostrar_Reporte();
+            JOptionPane.showMessageDialog(null, "Medidas de Tendencia Central");  
+              Ten.Mostrar_centrales();
+            JOptionPane.showMessageDialog(null, "Medidas de Dispersion");  
+              Dis.Mostrar_Disper();  
+              
+         Resultados res = new Resultados(Dis.Desviacion(), Dis.Rango(), Dis.Varianza(), Rd.CalMa(), Rd.Calme(), Dis.Media(), Ten.Moda(), Ten.Mediana());
+         res.setVisible(true);
     }
-    public static final String RED = "\u001B[31m";
-    public static final String GREEN = "\u001B[32m";
-    public static final String YELLOW = "\u001B[33m";
-    public static final String BLUE = "\u001B[34m";
-    public static final String CIAN = "\u001B[36m";
 }
