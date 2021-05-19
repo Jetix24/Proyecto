@@ -1,5 +1,7 @@
 
+import java.awt.Color;
 import javax.swing.JOptionPane;
+import javax.swing.UIManager; 
 
 public class Alumnos {
       private String[] Nom;
@@ -21,6 +23,11 @@ public class Alumnos {
         TendenciaCentral Ten = new TendenciaCentral(Cal, num);    
         Dispersion Dis = new Dispersion(Cal, num);
         ReporteDatos Rd = new ReporteDatos(Cal, num);
+        
+        UIManager UI=new UIManager(); 
+        UI.put("OptionPane.background", Color.blue); 
+        UI.put("Panel.background", Color.BLACK); 
+
         
         for(int i=0; i < num; ++i){ 
               Nom[i] =  JOptionPane.showInputDialog(null,"Ingresa el nombre del alumno");           

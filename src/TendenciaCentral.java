@@ -28,9 +28,9 @@ public class TendenciaCentral extends Estadistica {
                 moda2 = Cal[i];
              }
           }
-        if(moda2 != 0){ return "Las modas son = "+moda+" y "+moda2+ " y se repitieron " + Max_Rep+ " veces";   
+        if(moda2 != 0){ return moda+" y "+moda2+ " y se repitieron " + Max_Rep+ " veces";   
         } else{
-            return "La moda es = "+moda+" y se repitió "+Max_Rep+" veces"; 
+            return moda+" y se repitió "+Max_Rep+" veces"; 
         }
     }
     public double Mediana() {

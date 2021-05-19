@@ -6,11 +6,7 @@ public class Proyecto_Av {
         int num=0;
         
         Alumnos Est = new Alumnos(Cal,num);
-        Est.Estudiante();
-        
-     
-        
-        
+        Est.Estudiante();                 
     }
     
 }
