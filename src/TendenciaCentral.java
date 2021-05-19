@@ -8,15 +8,7 @@ public class TendenciaCentral extends Estadistica {
     public TendenciaCentral(double[]Cal, int num){
         super (Cal, num);
     }
-    public void Mostrar_centrales(){
-        GetMedia();
-        Moda();
-        Mediana();
-        JOptionPane.showMessageDialog(null, "La media es = " + Media()); 
-    }
-    public void GetMedia() {
-      JOptionPane.showMessageDialog(null, "La media es = " + Media()); 
-    }
+
     public String Moda() {
         Ordenar();
         int Max_Rep = 0;
@@ -40,9 +32,7 @@ public class TendenciaCentral extends Estadistica {
         } else{
             return "La moda es = "+moda+" y se repitió "+Max_Rep+" veces"; 
         }
-        
-        
-        }
+    }
     public double Mediana() {
         double pos;
         Ordenar();
