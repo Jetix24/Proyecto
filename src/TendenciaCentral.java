@@ -3,7 +3,7 @@ import javax.swing.JOptionPane;
 
 public class TendenciaCentral extends Estadistica {
 
-    double moda;
+    String Repeticiones;
     
     public TendenciaCentral(double[]Cal, int num){
         super (Cal, num);
@@ -14,6 +14,7 @@ public class TendenciaCentral extends Estadistica {
         int Max_Rep = 0;
         double moda = 0;
         double moda2 = 0;
+            String numCadena;
         
         for(int i=0; i<num; i++){
         int Rep = 0;
@@ -28,11 +29,17 @@ public class TendenciaCentral extends Estadistica {
                 moda2 = Cal[i];
              }
           }
-        if(moda2 != 0){ return moda+" y "+moda2+ " y se repitieron " + Max_Rep+ " veces";   
-        } else{
-            return moda+" y se repitió "+Max_Rep+" veces"; 
+            numCadena = String.valueOf(Max_Rep);
+            this.Repeticiones = numCadena;
+        if(moda2 != 0){        
+            return moda+" y "+moda2;   
+        } else{      
+            return moda+""; 
         }
     }
+    public String Num_Rep(){
+      return Repeticiones;
+   }
     public double Mediana() {
         double pos;
         Ordenar();
