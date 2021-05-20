@@ -37,9 +37,6 @@ public class TendenciaCentral extends Estadistica {
             return moda+""; 
         }
     }
-    public String Num_Rep(){
-      return Repeticiones;
-   }
     public double Mediana() {
         double pos;
         Ordenar();
