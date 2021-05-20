@@ -35,10 +35,11 @@ public class Alumnos {
               Cal[i] =  Double.parseDouble(JOptionPane.showInputDialog(null,new JLabel("Ingresa la calificación de " + Nom[i]),"Calificaciones",3));    
         } 
           for(int i=0; i<=num-1; i++){
-             JOptionPane.showMessageDialog(null, "Nombre: " + Nom[i] + " Matricula: " + Mat[i] + "    Calificacion: " + Cal[i],"Alumno",3);
+             JOptionPane.showMessageDialog(null, "Nombre: " + Nom[i] + "   Matricula: " + Mat[i] + "    Calificacion: " + Cal[i],"Alumno",3);
              
         }        
-         Resultados res = new Resultados(Dis.Desviacion(), Dis.Rango(), Dis.Varianza(), Rd.CalMa(), Rd.Calme(), Dis.Media(), Ten.Moda(), Ten.Repeticiones, Ten.Mediana());
-         res.setVisible(true);
+        Resultados res = new Resultados(Dis.Desviacion(), Dis.Rango(), Dis.Varianza(), Rd.CalMa(), Rd.Calme(), Dis.Media(), Ten.Moda(), Ten.Repeticiones, Ten.Mediana());
+        res.setVisible(true);
     }
+    
 }

@@ -1,6 +1,4 @@
 
-import javax.swing.JOptionPane;
-
 public class TendenciaCentral extends Estadistica {
 
     String Repeticiones;
