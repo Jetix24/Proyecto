@@ -18,7 +18,7 @@ public class Resultados extends javax.swing.JFrame {
     public Resultados(double desviacion, double rango, double varianza, double mayorcali, double menorcali, double media, String moda,String repeticiones, double mediana) {
         
         initComponents();
-        this.getContentPane().setBackground(Color.black);     
+        this.getContentPane().setBackground(Color.LIGHT_GRAY);     
         this.setTitle("Resultados");
         
         String desS = String.valueOf(desviacion);
@@ -51,28 +51,30 @@ public class Resultados extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
-        Lab_Tendencia_Central = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        Lab_Desviación = new javax.swing.JLabel();
+        Lab_Rango = new javax.swing.JLabel();
+        Lab_Calme = new javax.swing.JLabel();
+        No_Rep = new javax.swing.JTextField();
+        Media = new javax.swing.JTextField();
         Lab_Dispersión = new javax.swing.JLabel();
         Lab_Reporte_Datos = new javax.swing.JLabel();
-        Lab_Rango = new javax.swing.JLabel();
-        Lab_Desviación = new javax.swing.JLabel();
-        Lab_Varianza = new javax.swing.JLabel();
+        Lab_Tendencia_Central = new javax.swing.JLabel();
+        varianza = new javax.swing.JTextField();
+        Lab_CalMa = new javax.swing.JLabel();
         Lab_Moda = new javax.swing.JLabel();
+        Lab_Varianza = new javax.swing.JLabel();
         Lab_Media = new javax.swing.JLabel();
         Lab_Mediana = new javax.swing.JLabel();
-        Lab_CalMa = new javax.swing.JLabel();
-        Lab_Calme = new javax.swing.JLabel();
         Desviacion = new javax.swing.JTextField();
-        Media = new javax.swing.JTextField();
-        Moda = new javax.swing.JTextField();
-        Mediana = new javax.swing.JTextField();
-        rango = new javax.swing.JTextField();
         calimayor = new javax.swing.JTextField();
-        varianza = new javax.swing.JTextField();
+        Mediana = new javax.swing.JTextField();
         calimenor = new javax.swing.JTextField();
+        Moda = new javax.swing.JTextField();
+        rango = new javax.swing.JTextField();
         Btn_Salir = new javax.swing.JButton();
-        No_Rep = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        Labelico = new javax.swing.JLabel();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -90,104 +92,154 @@ public class Resultados extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(0, 0, 0));
+        setBackground(new java.awt.Color(0, 204, 204));
 
-        Lab_Tendencia_Central.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        Lab_Tendencia_Central.setForeground(new java.awt.Color(0, 255, 0));
-        Lab_Tendencia_Central.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Lab_Tendencia_Central.setText("Medidas de Tendencia Central");
-
-        Lab_Dispersión.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        Lab_Dispersión.setForeground(new java.awt.Color(0, 255, 255));
-        Lab_Dispersión.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Lab_Dispersión.setText("Medidas de Dispersión");
-
-        Lab_Reporte_Datos.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        Lab_Reporte_Datos.setForeground(new java.awt.Color(255, 153, 0));
-        Lab_Reporte_Datos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Lab_Reporte_Datos.setText("Reporte de Datos");
-        Lab_Reporte_Datos.setToolTipText("");
-
-        Lab_Rango.setForeground(new java.awt.Color(255, 255, 255));
-        Lab_Rango.setText("Rango:");
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Lab_Desviación.setForeground(new java.awt.Color(255, 255, 255));
         Lab_Desviación.setText("Desviación Estandar:");
+        jPanel2.add(Lab_Desviación, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
 
-        Lab_Varianza.setForeground(new java.awt.Color(255, 255, 255));
-        Lab_Varianza.setText("Varianza:");
-
-        Lab_Moda.setForeground(new java.awt.Color(255, 255, 255));
-        Lab_Moda.setText("Moda:");
-
-        Lab_Media.setForeground(new java.awt.Color(255, 255, 255));
-        Lab_Media.setText("Media:");
-
-        Lab_Mediana.setForeground(new java.awt.Color(255, 255, 255));
-        Lab_Mediana.setText("Mediana:");
-
-        Lab_CalMa.setForeground(new java.awt.Color(255, 255, 255));
-        Lab_CalMa.setText("Mayor Calificación:");
+        Lab_Rango.setForeground(new java.awt.Color(255, 255, 255));
+        Lab_Rango.setText("Rango:");
+        jPanel2.add(Lab_Rango, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
 
         Lab_Calme.setForeground(new java.awt.Color(255, 255, 255));
         Lab_Calme.setText("Menor Calificación:");
+        jPanel2.add(Lab_Calme, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 100, -1, -1));
 
-        Desviacion.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        Desviacion.addActionListener(new java.awt.event.ActionListener() {
+        No_Rep.setBackground(new java.awt.Color(63, 73, 74));
+        No_Rep.setForeground(new java.awt.Color(255, 255, 255));
+        No_Rep.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        No_Rep.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DesviacionActionPerformed(evt);
+                No_RepActionPerformed(evt);
             }
         });
+        jPanel2.add(No_Rep, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, 40, -1));
 
+        Media.setBackground(new java.awt.Color(63, 73, 74));
+        Media.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        Media.setForeground(new java.awt.Color(255, 255, 255));
         Media.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         Media.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MediaActionPerformed(evt);
             }
         });
+        jPanel2.add(Media, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 210, 20));
 
-        Moda.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        Moda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ModaActionPerformed(evt);
-            }
-        });
+        Lab_Dispersión.setFont(new java.awt.Font("Perpetua Titling MT", 1, 14)); // NOI18N
+        Lab_Dispersión.setForeground(new java.awt.Color(204, 204, 0));
+        Lab_Dispersión.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Lab_Dispersión.setText("Medidas de Dispersión");
+        jPanel2.add(Lab_Dispersión, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
-        Mediana.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        Mediana.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MedianaActionPerformed(evt);
-            }
-        });
+        Lab_Reporte_Datos.setFont(new java.awt.Font("Perpetua Titling MT", 1, 14)); // NOI18N
+        Lab_Reporte_Datos.setForeground(new java.awt.Color(255, 51, 0));
+        Lab_Reporte_Datos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Lab_Reporte_Datos.setText("Reporte de Datos");
+        Lab_Reporte_Datos.setToolTipText("");
+        jPanel2.add(Lab_Reporte_Datos, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, -1, -1));
 
-        rango.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        rango.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rangoActionPerformed(evt);
-            }
-        });
+        Lab_Tendencia_Central.setFont(new java.awt.Font("Perpetua Titling MT", 1, 14)); // NOI18N
+        Lab_Tendencia_Central.setForeground(new java.awt.Color(255, 155, 0));
+        Lab_Tendencia_Central.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Lab_Tendencia_Central.setText("Medidas de Tendencia Central");
+        jPanel2.add(Lab_Tendencia_Central, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 270, 20));
 
-        calimayor.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        calimayor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                calimayorActionPerformed(evt);
-            }
-        });
-
+        varianza.setBackground(new java.awt.Color(63, 73, 74));
+        varianza.setForeground(new java.awt.Color(255, 255, 255));
         varianza.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         varianza.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 varianzaActionPerformed(evt);
             }
         });
+        jPanel2.add(varianza, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, 200, 20));
 
+        Lab_CalMa.setForeground(new java.awt.Color(255, 255, 255));
+        Lab_CalMa.setText("Mayor Calificación:");
+        jPanel2.add(Lab_CalMa, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, -1, -1));
+
+        Lab_Moda.setForeground(new java.awt.Color(255, 255, 255));
+        Lab_Moda.setText("Moda:");
+        jPanel2.add(Lab_Moda, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
+
+        Lab_Varianza.setForeground(new java.awt.Color(255, 255, 255));
+        Lab_Varianza.setText("Varianza:");
+        jPanel2.add(Lab_Varianza, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
+
+        Lab_Media.setForeground(new java.awt.Color(255, 255, 255));
+        Lab_Media.setText("Media:");
+        jPanel2.add(Lab_Media, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
+
+        Lab_Mediana.setForeground(new java.awt.Color(255, 255, 255));
+        Lab_Mediana.setText("Mediana:");
+        jPanel2.add(Lab_Mediana, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
+
+        Desviacion.setBackground(new java.awt.Color(63, 73, 74));
+        Desviacion.setForeground(new java.awt.Color(255, 255, 255));
+        Desviacion.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Desviacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DesviacionActionPerformed(evt);
+            }
+        });
+        jPanel2.add(Desviacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 140, -1));
+
+        calimayor.setBackground(new java.awt.Color(63, 73, 74));
+        calimayor.setForeground(new java.awt.Color(255, 255, 255));
+        calimayor.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        calimayor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                calimayorActionPerformed(evt);
+            }
+        });
+        jPanel2.add(calimayor, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 60, 130, 20));
+
+        Mediana.setBackground(new java.awt.Color(63, 73, 74));
+        Mediana.setForeground(new java.awt.Color(255, 255, 255));
+        Mediana.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Mediana.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MedianaActionPerformed(evt);
+            }
+        });
+        jPanel2.add(Mediana, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 210, 20));
+
+        calimenor.setBackground(new java.awt.Color(63, 73, 74));
+        calimenor.setForeground(new java.awt.Color(255, 255, 255));
         calimenor.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         calimenor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 calimenorActionPerformed(evt);
             }
         });
+        jPanel2.add(calimenor, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, 130, 20));
 
+        Moda.setBackground(new java.awt.Color(63, 73, 74));
+        Moda.setForeground(new java.awt.Color(255, 255, 255));
+        Moda.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Moda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ModaActionPerformed(evt);
+            }
+        });
+        jPanel2.add(Moda, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 80, 20));
+
+        rango.setBackground(new java.awt.Color(63, 73, 74));
+        rango.setForeground(new java.awt.Color(255, 255, 255));
+        rango.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        rango.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rangoActionPerformed(evt);
+            }
+        });
+        jPanel2.add(rango, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 200, 20));
+
+        Btn_Salir.setBackground(new java.awt.Color(63, 73, 74));
+        Btn_Salir.setForeground(new java.awt.Color(255, 255, 255));
         Btn_Salir.setText("Salir");
         Btn_Salir.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         Btn_Salir.addActionListener(new java.awt.event.ActionListener() {
@@ -195,126 +247,24 @@ public class Resultados extends javax.swing.JFrame {
                 Btn_SalirActionPerformed(evt);
             }
         });
-
-        No_Rep.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        No_Rep.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                No_RepActionPerformed(evt);
-            }
-        });
+        jPanel2.add(Btn_Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, 120, 30));
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("No. de Rep:");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, -1, -1));
+
+        Labelico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mesa-blanco-fondo-oscuro_28629-838.jpg"))); // NOI18N
+        jPanel2.add(Labelico, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 420));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Lab_Reporte_Datos, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Lab_Moda)
-                                    .addComponent(Lab_Media))
-                                .addGap(28, 28, 28)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(Moda, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel1)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(Media)
-                                        .addGap(56, 56, 56)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Lab_Calme, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(Lab_CalMa, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addGap(18, 18, 18))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Lab_Tendencia_Central)
-                                    .addComponent(Lab_Varianza))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(No_Rep, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(Lab_Mediana)
-                                        .addGap(14, 14, 14)
-                                        .addComponent(Mediana)))
-                                .addGap(182, 182, 182)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(calimayor)
-                            .addComponent(calimenor, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Lab_Rango)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(rango, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(Lab_Dispersión, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(Lab_Desviación)
-                                .addGap(9, 9, 9)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(Desviacion, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                                    .addComponent(varianza))))
-                        .addGap(152, 152, 152)
-                        .addComponent(Btn_Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(73, 73, 73))
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 624, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Lab_Tendencia_Central)
-                    .addComponent(Lab_Reporte_Datos))
-                .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Lab_Media)
-                    .addComponent(Media, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Lab_CalMa)
-                    .addComponent(calimayor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Lab_Moda)
-                    .addComponent(Moda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Lab_Calme)
-                    .addComponent(calimenor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addComponent(No_Rep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Lab_Mediana)
-                    .addComponent(Mediana, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45)
-                .addComponent(Lab_Dispersión)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(Lab_Rango)
-                        .addGap(15, 15, 15))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(rango, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Btn_Salir))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Desviacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Lab_Desviación))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Lab_Varianza)
-                    .addComponent(varianza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(52, 52, 52))
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -409,6 +359,7 @@ public class Resultados extends javax.swing.JFrame {
     private javax.swing.JLabel Lab_Reporte_Datos;
     private javax.swing.JLabel Lab_Tendencia_Central;
     private javax.swing.JLabel Lab_Varianza;
+    private javax.swing.JLabel Labelico;
     private javax.swing.JTextField Media;
     private javax.swing.JTextField Mediana;
     private javax.swing.JTextField Moda;
@@ -417,6 +368,7 @@ public class Resultados extends javax.swing.JFrame {
     private javax.swing.JTextField calimenor;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField rango;

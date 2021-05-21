@@ -17,8 +17,8 @@ public class Alumnos {
     
     public void Estudiante() {
         UIManager UI=new UIManager(); 
-        UI.put("OptionPane.background", Color.black); 
-        UI.put("Panel.background", Color.BLACK); 
+        UI.put("OptionPane.background", Color.orange); 
+        UI.put("Panel.background", Color.ORANGE); 
         
         num = Integer.parseInt(JOptionPane.showInputDialog(null, new JLabel("Ingresa la cantidad de alumnos que se evaluaran"),"Cantidad de alumnos",3));             
         Nom = new String[num];
