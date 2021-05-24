@@ -1,3 +1,5 @@
+
+
 public class Estadistica extends Alumnos{
     
     public Estadistica(double[] Cal, int num){

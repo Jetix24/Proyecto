@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Clases">
+  <ClassDiagramComponents>
+    <Class name="Alumnos" package="Clases" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="Nom" type="String[]" visibility="private"/>
+        <Field name="Cal" type="double[]" visibility="package"/>
+        <Field name="Mat" type="long[]" visibility="private"/>
+        <Field name="num" type="int" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="double[]" name="Cal"/>
+          <Argument type="int" name="num"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="Estudiante" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Dispersion" package="Clases" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="double[]" name="Cal"/>
+          <Argument type="int" name="num"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="Rango" returnType="double" visibility="public"/>
+        <Method name="Varianza" returnType="double" visibility="public"/>
+        <Method name="Desviacion" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Estadistica" package="Clases" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="double[]" name="Cal"/>
+          <Argument type="int" name="num"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="Sumatoria" returnType="double" visibility="public"/>
+        <Method name="Ordenar" returnType="void" visibility="public"/>
+        <Method name="Media" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Proyecto_Av" package="Clases" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ReporteDatos" package="Clases" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="double[]" name="Cal"/>
+          <Argument type="int" name="num"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="CalMa" returnType="double" visibility="public"/>
+        <Method name="Calme" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TendenciaCentral" package="Clases" visibility="public" xPosition="1520.0" yPosition="20.0">
+      <Fields>
+        <Field name="Repeticiones" type="String" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="double[]" name="Cal"/>
+          <Argument type="int" name="num"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="Moda" returnType="String" visibility="public"/>
+        <Method name="Mediana" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Clases.Dispersion" target="Clases.Estadistica"/>
+    <IsRelation name="is" source="Clases.ReporteDatos" target="Clases.Estadistica"/>
+    <IsRelation name="is" source="Clases.TendenciaCentral" target="Clases.Estadistica"/>
+    <IsRelation name="is" source="Clases.Estadistica" target="Clases.Alumnos"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

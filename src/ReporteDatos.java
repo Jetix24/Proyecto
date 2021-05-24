@@ -1,5 +1,7 @@
 
 
+
+
 public class ReporteDatos extends Estadistica{
 
     public ReporteDatos(double[] Cal, int num) {
